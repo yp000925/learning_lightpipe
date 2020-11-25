@@ -1,5 +1,7 @@
 #Study note
-###Note
+
+
+### Note
 Since there are new version (field first) and old version (field last) of this library, the decorator `@backward_compatible` is used to do the transformation.  
 
 ### Kind of propagators
@@ -21,7 +23,7 @@ other aperture
 Ffield=CircAperture(Ffield,Dlens/2)
 Ffield=Lens(Ffield,f) #in order to create the circular lens
 ```
-###[define own phase and intensity filters](subintphase2.py)
+### [define own phase and intensity filters](subintphase2.py)
 `MultIntensity(F,Int)` and `MultiPhase(F,Phi)`
 `MultIntensity(F,Int)` : Intens: numpy.ndarray, float, int $E_{out} = E_{in}\times A^2$
 `MultiPhase(F,Phi)` : $E_{out} = E_{in}\times e^{j\phi}$
@@ -31,7 +33,7 @@ Ffield=Lens(Ffield,f) #in order to create the circular lens
 `SubPhase(Fin, Phi)` : Substitutes a given phase distribution in the field with $e^{j\phi}$.
 
 
-###[interference of two beam](Young.py)
+### [interference of two beam](Young.py)
 `BeamMix` performs the addition of two light field `Fout.field += Fin2.field`
 
 
