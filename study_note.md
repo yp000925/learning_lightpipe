@@ -5,12 +5,12 @@
 Since there are new version (field first) and old version (field last) of this library, the decorator `@backward_compatible` is used to do the transformation.  
 
 ### Kind of propagators
-*`Forward()` : Propagates the field using direct integration -> far field
-* `Forvard()` : Propagates the field using a FFT algorithm. -> near field  (the simplest and fastest, the spectral method)
+*`Forward()` : Propagates the field using direct integration -> far field 
+* `Forvard()` : Propagates the field using a FFT algorithm. -> near field  (the simplest and fastest, the spectral method)-> angular spectrum method 
 * `Steps()` : Propagates the field a distance, nstep x z, in nstep steps in a
     medium with a complex refractive index stored in the
     square array refr. [example](LensLikeMedium.py)
-*`Fresnel()`:  Propagates the field using a convolution method.
+*`Fresnel()`:  Propagates the field using a convolution method. -> direct covolutional integration but use FFT to accelerate the intergral 
 
 
 ### Kind of aperture and screen
@@ -42,6 +42,10 @@ Ffield=Lens(Ffield,f) #in order to create the circular lens
 `Intensity(Field)` 
 `Power(Fin)`
 `Tilt(Fin, tx, ty)` : tx (int, float) –> tilt in radians ; ty (int, float) –> tilt in radians
+`Interpol(Fin, new_size, new_N)` : use the bilinear interpolation methods to interpolate the field and padding zeros outside 
+
+
+
 ### Fourier Transform
 `PipFFT(Fin,index = 1)` : index=1-> forward transform index=-1-> back transform 
 
